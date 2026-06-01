@@ -1,6 +1,6 @@
 # File: .github/workflows/workflow.yml
 
-name: Run Azure Login with OIDC
+name: SAZ01 Azure Login with OIDC
 on: 
   workflow_dispatch:
 
@@ -17,7 +17,8 @@ jobs:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-         # run: echo "SUCCESSFULLY LOGGED_IN"
+          run: |
+            echo "-----SUCCESSFULLY LOGGED_IN-----"
 
       - name: Azure CLI script
         uses: azure/cli@v2
