@@ -1,0 +1,28 @@
+name: SAZ02 Arc Setup
+on:
+  workflow_dispatch:
+  
+    inputs:
+      environment:
+        required: false
+        default: dev
+        description: "Allowed is DEV, UAT"
+        type: choice
+        options:
+          - dev
+          - uat
+
+jobs:
+  LndJobs:
+   runs-on: ubuntu-latest
+
+   steps:
+     - name: init
+       run: echo "START"
+
+     - name: Checkout
+       uses: actions/Checkout@v4
+
+     - name: After Checkout
+       run: echo "POST CHECKOUT"
+
